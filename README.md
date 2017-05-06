@@ -41,7 +41,7 @@ You're reading it! and here is a link to my [project code](https://github.com/Ha
 
 #### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
-I used the numpy library to calculate summary statistics of the traffic
+I used python to calculate summary statistics of the traffic
 signs data set:
 
 * The size of training set initially is 34799 images
