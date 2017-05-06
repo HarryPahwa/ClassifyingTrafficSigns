@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./histogram.jpg "Histogram of Classes"
-[image2]: ./grayscale1.jpg "Grayscaling and Normalizing"
+[image2]: ./grayscale.jpg "Grayscaling and Normalizing"
 [image3]: ./grayscale2.jpg "Grayscaling and Normalizing"
 [image4]: ./augmented1.jpg "Example of Augmented data"
 [image5]: ./augmented2.jpg "Example of Augmented data"
@@ -77,7 +77,8 @@ Later on, I decided to skew the image a little and rotate it to a certain degree
 
 This worked great and generated new images for a total of 80,000+ images in the training set.
 However, through my testing, I found that this was more often than not overfitting the data and was not needed to generate a 93% accuracy.
-This section is still present in the jupyter notebook but wasn't run to obtain the desired result.
+
+#### This section is still present in the jupyter notebook but wasn't run to obtain the desired result.
 
 Here is an example of an original image and an augmented image:
 
@@ -175,7 +176,7 @@ The code for making predictions on my final model is located in the final cell o
 
 For the first image, the model is close between guessing a speed limit of 50 or 60 km/hr, and the image does not guess correctly. The top five soft max probabilities were
 
-Class 2: Speed limit (50km/h) with a probability of 28.1409
+#### Class 2: Speed limit (50km/h) with a probability of 28.1409
 
 Class 3: Speed limit (60km/h) with a probability of 19.895
 
@@ -186,10 +187,9 @@ Class 11: Right-of-way at the next intersection with a probability of 1.05766
 Class 25: Road work with a probability of 1.01091
 
 
-
 For the second image, the model is faily certain that its a speed limit of 30km/hr sign, which is correct. The top five soft max probabilities were
 
-Class 1: Speed limit (30km/h) with a probability of 29.7613
+#### Class 1: Speed limit (30km/h) with a probability of 29.7613
 
 Class 6: End of speed limit (80km/h) with a probability of 12.1484
 
@@ -202,7 +202,7 @@ Class 0: Speed limit (20km/h) with a probability of -6.58093
 
 For the third image, the model predicts that its a general caution sign, which is correct. The next highest guess was a Children Crossing sign which is a good guess as they are both triangular in shape. The top five soft max probabilities were
 
-Class 18: General caution with a probability of 28.0687
+#### Class 18: General caution with a probability of 28.0687
 
 Class 28: Children crossing with a probability of 15.8438
 
@@ -215,7 +215,7 @@ Class 27: Pedestrians with a probability of 7.64271
 
 For the fourth image, the model is faily certain that its a yield sign, which is correct. The second best guess however, is very far from correct. Also, note that the sign in this image is to the right, rather than the center. The top five soft max probabilities were
 
-Class 13: Yield with a probability of 21.5518
+#### Class 13: Yield with a probability of 21.5518
 
 Class 33: Turn right ahead with a probability of 11.1613
 
@@ -229,7 +229,7 @@ Class 35: Ahead only with a probability of 7.61424
 
 For the final image, the model is very certain that its a No Entry sign (probability>50%). The top five soft max probabilities were
 
-Class 17: No entry with a probability of 50.7468
+#### Class 17: No entry with a probability of 50.7468
 
 Class 14: Stop with a probability of 12.6044
 
