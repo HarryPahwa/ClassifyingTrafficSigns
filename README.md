@@ -1,4 +1,4 @@
-#**Traffic Sign Recognition** 
+# **Traffic Sign Recognition** 
 
 
 **Build a Traffic Sign Recognition Project**
@@ -73,7 +73,10 @@ I decided to generate additional data because some classes were heavily represen
 To add more data to the the data set, I used the following techniques:
 
 I recognized some of the classes would look the same if they were flipped or rotated about one or both of its axis. However, upon implementation, this resulted in bringing my accuracy down, hence, I abandoned it quickly. 
+
 Later on, I decided to skew the image a little and rotate it to a certain degree that didn't change the classification of the image but was still different from the original. This was followed by changing the brightness of the image slightly. I generated enough data such that there were 2010 samples for each class and the histogram was flat. 
+
+(I consulted some blogs for the image skewing code in order to test if it helped my case)
 
 This worked great and generated new images for a total of 80,000+ images in the training set.
 However, through my testing, I found that this was more often than not overfitting the data and was not needed to generate a 93% accuracy.
