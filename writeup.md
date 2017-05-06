@@ -67,7 +67,7 @@ After that, I normalized the image data because neural networks train faster on 
 Here are examples of a traffic sign image after grayscaling and normalizing.
 
 ![alt text][image2]
-![alt text] [image3]
+![alt text][image3]
 
 I decided to generate additional data because some classes were heavily represented in the training set, while others weren't.
 To add more data to the the data set, I used the following techniques:
