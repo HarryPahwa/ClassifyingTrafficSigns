@@ -243,3 +243,79 @@ Class 9: No passing with a probability of 3.99676
 Class 40: Roundabout mandatory with a probability of 1.04844
 
 
+# **Update after Softmax implementation**
+
+
+I implemented softmax to get the probabilities in predictions. However, my model was predicting these images incorrectly. I think this was an issue with the loading of the data. However, I still implemented the softmax probabilities. Even though the predictions are incorrect, I believe the following implementation should be correct. Thanks!
+
+
+
+Image: 1
+
+Class 3: Speed limit (60km/h) with a probability of 0.0701734
+
+Class 13: Yield with a probability of 0.0514876
+
+Class 21: Double curve with a probability of 0.0411576
+
+Class 24: Road narrows on the right with a probability of 0.039172
+
+Class 23: Slippery road with a probability of 0.0389406
+
+
+
+Image: 2
+
+Class 24: Road narrows on the right with a probability of 0.0691252
+
+Class 3: Speed limit (60km/h) with a probability of 0.0634557
+
+Class 13: Yield with a probability of 0.0611629
+
+Class 10: No passing for vehicles over 3.5 metric tons with a probability of 0.0539427
+
+Class 28: Children crossing with a probability of 0.0419378
+
+
+
+Image: 3
+
+Class 3: Speed limit (60km/h) with a probability of 0.0654189
+
+Class 13: Yield with a probability of 0.0633523
+
+Class 10: No passing for vehicles over 3.5 metric tons with a probability of 0.057465
+
+Class 36: Go straight or right with a probability of 0.0425293
+
+Class 11: Right-of-way at the next intersection with a probability of 0.0373378
+
+
+
+
+Image: 4
+
+Class 23: Slippery road with a probability of 0.0610215
+
+Class 13: Yield with a probability of 0.0514501
+
+Class 10: No passing for vehicles over 3.5 metric tons with a probability of 0.0487837
+
+Class 40: Roundabout mandatory with a probability of 0.0422501
+
+Class 2: Speed limit (50km/h) with a probability of 0.0398402
+
+
+
+Image: 5
+
+Class 10: No passing for vehicles over 3.5 metric tons with a probability of 0.0481649
+
+Class 16: Vehicles over 3.5 metric tons prohibited with a probability of 0.0390231
+
+Class 2: Speed limit (50km/h) with a probability of 0.0381009
+
+Class 24: Road narrows on the right with a probability of 0.0361647
+
+Class 23: Slippery road with a probability of 0.0357701
+
