@@ -1,15 +1,12 @@
 # **Traffic Sign Recognition** 
+by: Harpreet Singh
 
-
-**Build a Traffic Sign Recognition Project**
 
 The goals / steps of this project are the following:
-* Load the data set (see below for links to the project data set)
 * Explore, summarize and visualize the data set
 * Design, train and test a model architecture
 * Use the model to make predictions on new images
 * Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
 
 
 [//]: # (Image References)
@@ -27,19 +24,7 @@ The goals / steps of this project are the following:
 [image10]: ./img3.jpg "Traffic Sign 4"
 [image11]: ./img4.jpg "Traffic Sign 5"
 
-## Rubric Points
-### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
----
-### Writeup / README
-
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
-
-You're reading it! and here is a link to my [project code](https://github.com/HarryPahwa/ClassifyingTrafficSigns/blob/master/Traffic_Sign_Classifier.ipynb)
-
-### Data Set Summary & Exploration
-
-#### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
 I used python to calculate summary statistics of the traffic
 signs data set:
@@ -50,15 +35,12 @@ signs data set:
 * The shape of a traffic sign image is 32x32x3
 * The number of unique classes/labels in the data set is 43
 
-#### 2. Include an exploratory visualization of the dataset.
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data is distributed across the 43 classes. As you can see, it is pretty skewed.
 
 ![alt text][image1]
 
-### Design and Test a Model Architecture
-
-#### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. 
+### Model Architecture
 
 As a first step, I decided to convert the images to grayscale because that allowed us to reduce our 3 RGB channels into a singal channel. This would allow for the neural network architecture to train much faster as it doesn't have to process three different data channels.
 
@@ -79,9 +61,9 @@ Later on, I decided to skew the image a little and rotate it to a certain degree
 (I consulted some blogs for the image skewing code in order to test if it helped my case)
 
 This worked great and generated new images for a total of 80,000+ images in the training set.
-However, through my testing, I found that this was more often than not overfitting the data and was not needed to generate a 93% accuracy.
+However, through my testing, I found that this was more often than not overfitting the data.
 
-#### This section is still present in the jupyter notebook but wasn't run to obtain the desired result.
+
 
 Here is an example of an original image and an augmented image:
 
@@ -90,7 +72,6 @@ Here is an example of an original image and an augmented image:
 ![alt text][image6]
 
 
-#### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 My final model consisted of the following layers:
 
@@ -113,43 +94,27 @@ My final model consisted of the following layers:
  
 
 
-#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
-
 To train the model, I used an Adam Optimizer with a batch size of 128 and 30 epochs. I used a learning rate of 0.00065. These values were determined experimentally.
 
-#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
 * training set accuracy of 0.993
 * validation set accuracy of 0.93 
 * test set accuracy of 0.908
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
 
-I built my neural network architecture over the LeNet architecture
-
-* What were some problems with the initial architecture?
-
-The validation accuracy was too low.
-
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on thes validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+I built my neural network architecture over the LeNet architecture but the validation accuracy was too low.
 
 Initially, one dropout layer at the end was added and the keep_probability was experimented with. I found that 90% keep probability worked well. However, this wasn't enough to obtain the 0.93 validation accuracy, hence, I added another dropout layer earlier on.
 
-* Which parameters were tuned? How were they adjusted and why?
-
-The keep_prob parameters for the dropout layers were tuned quite a bit. Other values I played with were the Batch Size, Number of EPOCHS, Learning Rate, and the sigma value. The decision to increase or decrease the number of EPOCHS was made according to the loss curves plotted after each attempt. The learning rate was a big factor to prevent overfitting and underfitting. It was adjusted accordingly to the result after each attempt.
-
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+Other values I played with were the Batch Size, Number of EPOCHS, Learning Rate, and the sigma value. The decision to increase or decrease the number of EPOCHS was made according to the loss curves plotted after each attempt. The learning rate was a big factor to prevent overfitting and underfitting. It was adjusted accordingly to the result after each attempt.
 
 Adding dropout layers was a big and important design choice as I noticed that more often than not my model was overfitting my data and hence, I needed something to reduce the overfitting.
 
  
 
-### Test a Model on New Images
+### Testing New Images
 
-#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
 
@@ -157,8 +122,6 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image10] ![alt text][image11]
 
 The third image might be difficult to classify because it contains the yield sign as well as half of a different sign that the network wasn't trained upon.
-
-#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set.
 
 Here are the results of the prediction:
 
@@ -172,10 +135,6 @@ Here are the results of the prediction:
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. If you recall, the accuracy on the test set of 90.8%.
-
-#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
-
-The code for making predictions on my final model is located in the final cell of the Ipython notebook.
 
 For the first image, the model is close between guessing a speed limit of 50 or 60 km/hr, and the image does not guess correctly. The top five soft max probabilities were
 
@@ -246,8 +205,7 @@ Class 40: Roundabout mandatory with a probability of 1.04844
 # **Update after Softmax implementation**
 
 
-I implemented softmax to get the probabilities in predictions. However, my model was predicting these images incorrectly. I think this was an issue with the loading of the data. However, I still implemented the softmax probabilities. Even though the predictions are incorrect, I believe the following implementation should be correct. Thanks!
-
+I implemented softmax to get the probabilities in predictions. However, my model is predicting these images incorrectly. Results anyways:
 
 
 Image: 1
@@ -318,4 +276,6 @@ Class 2: Speed limit (50km/h) with a probability of 0.0381009
 Class 24: Road narrows on the right with a probability of 0.0361647
 
 Class 23: Slippery road with a probability of 0.0357701
+
+Thanks for reading.
 
